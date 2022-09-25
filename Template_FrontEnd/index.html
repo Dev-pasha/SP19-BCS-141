@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Front End Project</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        /* background-color: rgb(245, 241, 241); */
+      }
+      .header {
+        min-height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(
+            360deg,
+            rgb(0, 0, 0, 0.8),
+            rgb(0, 0, 0, 0.3)
+          ),
+          url(https://images.pexels.com/photos/1007901/pexels-photo-1007901.jpeg?cs=srgb&dl=pexels-oleksandr-pidvalnyi-1007901.jpg&fm=jpg);
+        background-position: center;
+        background-size: cover;
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 4%;
+        background-image: linear-gradient(
+          180deg,
+          rgb(0, 0, 0, 0.8),
+          rgb(0, 0, 0, 0.01)
+        );
+      }
+      .logo {
+        width: 200px;
+        cursor: pointer;
+      }
+      .navlinks li {
+        list-style: none;
+        display: inline;
+        margin: 10px 30px;
+      }
+
+      .navlinks li a {
+        text-decoration: none;
+        color: white;
+      }
+      .register {
+        background-color: white;
+        padding: 10px 25px;
+        border-radius: 15px;
+        text-decoration: none;
+        color: black;
+        /* border-color: black; */
+        /* border-width: 1px solid black; */
+        cursor: pointer;
+      }
+      .register:hover {
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+        /* border-color: red; */
+        border-width: thick;
+      }
+      .container {
+        /* margin: 0 32%; */
+        /* background-color: aqua; */
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+      }
+      .container h1 {
+        font-weight: 500;
+        font-size: 4vw;
+        color: white;
+        padding-top: 13%;
+      }
+      .searchbar {
+        margin-top: 15px;
+        padding: 20px 35px;
+        background-color: white;
+        border-radius: 15px;
+      }
+      .serches {
+        display: flex;
+      }
+      .serches div {
+        display: flex;
+        flex-direction: column;
+      }
+      .serches div input {
+        border: none;
+        margin-top: 4%;
+      }
+      .serches label {
+        font-family: sans-serif;
+        font-weight: bold;
+      }
+      .button {
+        background-color: chocolate;
+        border: none;
+        border-radius: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      /* ///////////////////////////////////////////////////////////////////////// */
+
+      /* Trending */
+
+      .trenContainer {
+        margin: 5%;
+        padding: 10px 4%;
+        /* background-color:red; */
+      }
+      .trenContainer hr {
+        background-color: chocolate;
+        width: 500px;
+        border-width: none;
+      }
+      .trenContainer h2 {
+        font-weight: bold;
+        padding-top: 25px;
+        padding-bottom: 2px;
+
+        font-size: 35px;
+      }
+      .trending {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .trend {
+        background-color: #d2691e;
+        padding: 25px 25px;
+        border-radius: 15px;
+        flex: 20%;
+        margin: 25px 7px;
+      }
+      .subhead {
+        font-weight: bold;
+        font-family: sans-serif;
+        padding-top: 10px;
+        color: rgb(0, 0, 0);
+      }
+      .trend img {
+        background-size: cover;
+        height: 150px;
+        border-radius: 15px;
+      }
+      .text {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        margin-top: 5px;
+        color: rgb(41, 41, 41);
+      }
+      .trend button {
+        padding: 10px 20px;
+        margin-top: 25px;
+        border-radius: 15px;
+        border-width: 0px;
+        cursor: pointer;
+      }
+      /* ///////////////////////////////////////////////////////////////////////// */
+
+      .textContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 5% 20%;
+      }
+
+      .textContainer h1 {
+        font-size: 45px;
+        font-weight: 700;
+        color: #d2691e;
+      }
+      .textContainer p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        margin-top: 5%;
+        color: rgb(41, 41, 41);
+        text-align: center;
+        margin: 8px;
+      }
+      .fa {
+        padding: 12px;
+        font-size: 13px;
+        width: 40px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 9px;
+        background-color: chocolate;
+        border-radius: 15px;
+      }
+      .social {
+        margin: 15px;
+      }
+      .fa:hover {
+        opacity: 1;
+        /* background-color: #d2691e; */
+        /* color: white; */
+      }
+      .fa-facebook {
+        color: white;
+      }
+
+      .fa-twitter {
+        color: white;
+      }
+
+      .fa-google {
+        color: white;
+      }
+
+      .fa-linkedin {
+        color: white;
+      }
+      .fa-youtube {
+        color: white;
+      }
+
+      .fa-instagram {
+        color: white;
+      }
+
+      /*  /////////////////////         FOOTER           //////////////////////////// */
+      .mainfooter {
+        display: flex;
+        /* flex-wrap: column wrap */
+
+        flex-direction: column;
+        background-color: rgb(22, 21, 21);
+        padding: 3% 3%;
+      }
+      .footerh4 {
+        color: chocolate;
+      }
+      .Abovefooter {
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-content: space-evenly;
+        /* flex-wrap: wrap; */
+        /* background-color: aqua; */
+        /* padding-top: 5em; */
+      }
+      .contact {
+        flex: 20%;
+        /* justify-content: center; */
+      }
+      .usefull_links {
+        flex: 20%;
+      }
+      .recentpost {
+        flex: 20%;
+      }
+
+      .li {
+        list-style-type: none;
+        line-height: 2em;
+        color: rgb(172, 169, 165);
+      }
+      .li:hover {
+        opacity: 0.9;
+        color: chocolate;
+      }
+      .link {
+        text-decoration: none;
+        color: rgb(172, 169, 165);
+        /* font-size: large; */
+      }
+      .link:hover {
+        opacity: 0.9;
+        color: rgb(210, 105, 30);
+      }
+
+      .logofooter {
+        /* display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; */
+        /* margin-top: 2%; */
+        flex: 35%;
+        /* background-color: red; */
+      }
+      .logofooter img {
+        height: 350px;
+        /* background-size: cover; */
+      }
+      .copyright {
+        padding: 25px;
+        background-color: rgb(0, 0, 0);
+        /* justify-content: center; */
+      }
+      .copyright p {
+        text-align: center;
+        color: white;
+      }
+      /* ////////////////////////////////////////// call to action/////////////////////////////////// */
+      .con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .callta {
+        background-color: rgb(210, 105, 30);
+        /* margin-bottom: 35px; */
+        margin: 5%;
+
+        /* margin-top: 45px; */
+
+        /* margin: 25px; */
+        /* padding: 10% ; */
+        width: 85%;
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 15px;
+       
+
+        background-image: linear-gradient(
+            to right,
+            rgb(210, 105, 30),
+           transparent
+          ),
+          url(https://images.pexels.com/photos/1007901/pexels-photo-1007901.jpeg?cs=srgb&dl=pexels-oleksandr-pidvalnyi-1007901.jpg&fm=jpg);
+      }
+      .callta h2{
+        color: white;
+        font-size: 45px;
+        font-weight: 700;
+        /* padding-right: 84px; */
+        padding-top: 45px;
+        padding-left: 35px;
+        padding-bottom: 15px;
+    }
+      .callta p{
+        color: white;      
+        padding-left: 35px;
+        
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div class="header">
+      <nav class="navbar">
+        <img class="logo" src="Untitled design.png" alt="" />
+        <ul class="navlinks">
+          <li><a href="#">Popular Places</a></li>
+          <li><a href="#">Travel Outside</a></li>
+          <li><a href="#">Online Packages</a></li>
+        </ul>
+        <a href="#" class="register">Register Now</a>
+      </nav>
+      <div class="container">
+        <h1>Find Your Next Stay</h1>
+        <div class="searchbar">
+          <form class="serches">
+            <div>
+              <label for="">Location</label>
+              <input type="text" placeholder="Where you wana go...???" />
+            </div>
+            <div>
+              <label for="">Check in</label>
+              <input type="text" placeholder="Add Date" />
+            </div>
+            <div>
+              <label for="">Check Out</label>
+              <input type="text" placeholder="Add Date" />
+            </div>
+            <div>
+              <label for="">Guest</label>
+              <input type="text" placeholder="Add A Guest" />
+            </div>
+            <button class="button" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Trending Section -->
+    <div class="trenContainer">
+      <h2>Trending Places</h2>
+      <hr color="#d2691e" />
+      <div class="trending">
+        <div class="trend">
+          <img
+            src="https://images.pexels.com/photos/2115367/pexels-photo-2115367.jpeg?cs=srgb&dl=pexels-aleksandar-pasaric-2115367.jpg&fm=jpg"
+            alt=""
+          />
+          <p class="subhead">Dubai</p>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+            quis porro, iure excepturi neque totam odit,
+            <br />
+            quo, obcaecati nesciunt quia nihil vero! Consequatur accusamus fugit
+            ad excepturi veniam architecto quibusdam?
+          </p>
+          <button type="submit">Book Now</button>
+        </div>
+        <div class="trend">
+          <img
+            src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?cs=srgb&dl=pexels-pixabay-460672.jpg&fm=jpg"
+            alt=""
+          />
+          <p class="subhead">London</p>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+            quis porro, iure excepturi neque totam odit,
+            <br />
+            quo, obcaecati nesciunt quia nihil vero! Consequatur accusamus fugit
+            ad excepturi veniam architecto quibusdam?
+          </p>
+          <button type="submit">Book Now</button>
+        </div>
+        <div class="trend">
+          <img
+            src="https://images.pexels.com/photos/1320686/pexels-photo-1320686.jpeg?cs=srgb&dl=pexels-asad-photo-maldives-1320686.jpg&fm=jpg"
+            alt=""
+          />
+          <p class="subhead">Maldieves</p>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+            quis porro, iure excepturi neque totam odit,
+            <br />
+            quo, obcaecati nesciunt quia nihil vero! Consequatur accusamus fugit
+            ad excepturi veniam architecto quibusdam?
+          </p>
+          <button type="submit">Book Now</button>
+        </div>
+        <div class="trend">
+          <img
+            src="https://images.pexels.com/photos/1320686/pexels-photo-1320686.jpeg?cs=srgb&dl=pexels-asad-photo-maldives-1320686.jpg&fm=jpg"
+            alt=""
+          />
+          <p class="subhead">Maldieves</p>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+            quis porro, iure excepturi neque totam odit,
+            <br />
+            quo, obcaecati nesciunt quia nihil vero! Consequatur accusamus fugit
+            ad excepturi veniam architecto quibusdam?
+          </p>
+          <button type="submit">Book Now</button>
+        </div>
+      </div>
+    </div>
+  
+
+    <!-- Section design -->
+    <div class="con">
+        
+        <div class="callta">
+            <h2>Sharing Is <br> Everything Now !!!</h2>
+            <p>
+              Great Oppurtunity to <br> make extra money by sharing your space
+            </p>
+        </div>
+    </div>
+
+
+      <!-- Some Textual Place -->
+
+      <div class="textContainer">
+        <h1>About The Company</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi corrupti
+          nostrum non omnis eaque earum veritatis, sint perspiciatis itaque cumque
+          aliquam quas at veniam magnam quae quam impedit sapiente illum! Lorem
+          ipsum dolor sit amet, consectetur adipisicing elit. Sequi corrupti
+          nostrum non omnis eaque earum veritatis, sint perspiciatis itaque cumque
+          aliquam quas at veniam magnam quae quam impedit sapiente illum! Lorem
+          ipsum dolor sit amet, consectetur <br />
+          adipisicing elit. Sequi corrupti nostrum non omnis eaque earum
+          veritatis, sint perspiciatis itaque cumque aliquam quas at veniam magnam
+          quae quam impedit sapiente illum! Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit. Sequi corrupti nostrum non omnis eaque
+          earum veritatis, sint perspiciatis itaque cumque aliquam quas at veniam
+          magnam quae quam impedit sapiente illum!
+        </p>
+  
+        <div class="social">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-google"></a>
+          <a href="#" class="fa fa-linkedin"></a>
+          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="fa fa-instagram"></a>
+        </div>
+      </div>
+    <!-- Footer  -->
+    <div class="mainfooter">
+      <div class="Abovefooter">
+        <div class="logofooter">
+          <img src="Untitled design.png" alt="" />
+        </div>
+        <div class="contact">
+          <h4 class="footerh4">CONTACT</h4>
+
+          <li class="li">Troed-y-bryn sidcup lane</li>
+          <li class="li">CF83 2PX, Caerphilly</li>
+          <li class="li">Mid Glamorgan , UK</li>
+          <li class="li">
+            <a class="link" href="www.google.com">www.fakexy.com</a>
+          </li>
+          <li class="li">029 2088 2642</li>
+        </div>
+        <div class="usefull_links">
+          <h4 class="footerh4">USEFUL LINKS</h4>
+
+          <li class="li">Blog</li>
+          <li class="li">Pricing</li>
+          <li class="li">Sales</li>
+          <li class="li">Customer Services</li>
+          <li class="li">About Us</li>
+        </div>
+        <div class="recentpost">
+          <h4 class="footerh4">RECENT POST</h4>
+
+          <li class="li">Lorem ipsum dolor sit, amet</li>
+          <li class="li">Lorem ipsum dolor sit, amet</li>
+          <li class="li">Lorem ipsum dolor sit, amet</li>
+          <li class="li">Lorem ipsum dolor sit, amet</li>
+          <li class="li">Lorem ipsum dolor sit, amet</li>
+        </div>
+      </div>
+    </div>
+    <!-- copy right -->
+    <div class="copyright">
+      <p>All rights reserved by Abdullah Khalid Pasha 2021</p>
+    </div>
+  </body>
+</html>

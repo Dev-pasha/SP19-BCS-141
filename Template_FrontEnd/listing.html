@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listing</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        /* background-color: rgb(245, 241, 241); */
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 5%;
+        background-color: rgba(0, 0, 0, 0.952);
+      }
+      .logo {
+        width: 140px;
+        /* height: 150px; */
+        cursor: pointer;
+        /* background-color: aqua; */
+        /* margin-bottom: -54px; */
+      }
+      .navlinks li {
+        list-style: none;
+        display: inline;
+        margin: 0 30px;
+      }
+
+      .navlinks li a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+      }
+      .register {
+        background-color: white;
+        padding: 10px 25px;
+        border-radius: 15px;
+        text-decoration: none;
+        color: black;
+        /* border-color: black; */
+        /* border-width: 1px solid black; */
+        cursor: pointer;
+      }
+      .container {
+        /* background-color: aqua; */
+        margin: 5% 6%;
+        display: flex;
+        flex-direction: row;
+      }
+      .rightContainer {
+        /* position: fixed; */
+        height: auto;
+        flex-direction: column;
+        flex: 25%;
+        padding: 2% 4%;
+        /* background-color: blue; */
+        border: 0.01px solid rgba(107, 107, 107, 0.137);
+      }
+      .aFc {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .villa {
+        margin: 17px 0px;
+        padding: 4px 10px;
+        border: none;
+      }
+      .Sectionbest {
+        margin: 17px 0px;
+      }
+      .best {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 13px 0px;
+      }
+      .Sectionbest2 {
+        margin: 15px 0px;
+      }
+      .leftContainer {
+        flex: 75%;
+        padding: 10px 2%;
+      }
+      .innerleftContainer {
+        display: flex;
+        flex-direction: column;
+      }
+      .cardContainer {
+        /* background-color: blue; */
+        display: flex;
+        flex-direction: row;
+        padding: 3% 2%;
+      }
+      .detail {
+        margin: 2px 2%;
+        /* background-color: red; */
+        padding-left: 2%;
+        flex: 10%;
+      }
+      .stars {
+        display: flex;
+        flex-direction: row;
+        margin: 1px 0px;
+      }
+      .stars span {
+        padding-left: 3px;
+      }
+      .detail p {
+        padding: 3px 0px;
+      }
+      .price{
+        margin-top: 43px;
+        display: flex;
+        /* background-color: aqua; */
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
+
+
+                                                                               /* foooter */
+        .mainfooter {
+        display: flex;
+        /* flex-wrap: column wrap */
+
+        flex-direction: column;
+        background-color: rgb(22, 21, 21);
+        padding: 3% 3%;
+      }
+      .footerh4 {
+        color: chocolate;
+      }
+      .Abovefooter {
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-content: space-evenly;
+        /* flex-wrap: wrap; */
+        /* background-color: aqua; */
+        /* padding-top: 5em; */
+      }
+      .contact {
+        flex: 20%;
+        /* justify-content: center; */
+      }
+      .usefull_links {
+        flex: 20%;
+      }
+      .recentpost {
+        flex: 20%;
+      }
+
+      .li {
+        list-style-type: none;
+        line-height: 2em;
+        color: rgb(172, 169, 165);
+      }
+      .li:hover {
+        opacity: 0.9;
+        color: chocolate;
+      }
+      .link {
+        text-decoration: none;
+        color: rgb(172, 169, 165);
+        /* font-size: large; */
+      }
+      .link:hover {
+        opacity: 0.9;
+        color: rgb(210, 105, 30);
+      }
+
+      .logofooter {
+        /* display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; */
+        /* margin-top: 2%; */
+        flex: 35%;
+        /* background-color: red; */
+      }
+      .logofooter img {
+        height: 350px;
+        /* background-size: cover; */
+      }
+      .copyright {
+        padding: 25px;
+        background-color: rgb(0, 0, 0);
+        /* justify-content: center; */
+      }
+      .copyright p {
+        text-align: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div class="header">
+      <nav class="navbar">
+        <img class="logo" src="small logo.png" alt="" />
+        <ul class="navlinks">
+          <li><a href="#">Popular Places</a></li>
+          <li><a href="#">Travel Outside</a></li>
+          <li><a href="#">Online Packages</a></li>
+        </ul>
+        <a href="#" class="register">Register Now</a>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div class="leftContainer">
+        <div class="innerleftContainer">
+          <p><b> 200+ Options </b></p>
+          <h1>Recommended Places In San Franciscp</h1>
+          <hr color="black" style="margin-top: 23px" />
+
+          <div class="cardContainer">
+            <div class="img">
+              <img
+                height="200px"
+                style="border-radius: 15px"
+                src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg"
+                alt=""
+              />
+            </div>
+            <div class="detail">
+              <p>Private Villa in San Francisco</p>
+              <h2>Deluxe Queen Room with Street View</h2>
+              <p>1 bedroom / 1 bathroom / Wifi / Kitchen</p>
+              <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <div class="price">
+                <p style="opacity: 0.6;">2 Guest</p>
+                <p> <b style="font-size: 25px;">$100</b> /day</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="innerleftContainer">
+          <hr color="black" style="margin-top: 23px" />
+
+          <div class="cardContainer">
+            <div class="img">
+              <img
+                height="200px"
+                style="border-radius: 15px"
+                src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg"
+                alt=""
+              />
+            </div>
+            <div class="detail">
+              <p>Private Villa in San Francisco</p>
+              <h2>Deluxe Queen Room with Street View</h2>
+              <p>1 bedroom / 1 bathroom / Wifi / Kitchen</p>
+              <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <div class="price">
+                <p style="opacity: 0.6;">2 Guest</p>
+                <p> <b style="font-size: 25px;">$100</b> /day</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="innerleftContainer">
+            <hr color="black" style="margin-top: 23px" />
+  
+            <div class="cardContainer">
+              <div class="img">
+                <img
+                  height="200px"
+                  style="border-radius: 15px"
+                  src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg"
+                  alt=""
+                />
+              </div>
+              <div class="detail">
+                <p>Private Villa in San Francisco</p>
+                <h2>Deluxe Queen Room with Street View</h2>
+                <p>1 bedroom / 1 bathroom / Wifi / Kitchen</p>
+                <div class="stars">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                </div>
+                <div class="price">
+                  <p style="opacity: 0.6;">2 Guest</p>
+                  <p> <b style="font-size: 25px;">$100</b> /day</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="innerleftContainer">
+            <hr color="black" style="margin-top: 23px" />
+  
+            <div class="cardContainer">
+              <div class="img">
+                <img
+                  height="200px"
+                  style="border-radius: 15px"
+                  src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg"
+                  alt=""
+                />
+              </div>
+              <div class="detail">
+                <p>Private Villa in San Francisco</p>
+                <h2>Deluxe Queen Room with Street View</h2>
+                <p>1 bedroom / 1 bathroom / Wifi / Kitchen</p>
+                <div class="stars">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                </div>
+                <div class="price">
+                  <p style="opacity: 0.6;">2 Guest</p>
+                  <p> <b style="font-size: 25px;">$100</b> /day</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="innerleftContainer">
+            <hr color="black" style="margin-top: 23px" />
+  
+            <div class="cardContainer">
+              <div class="img">
+                <img
+                  height="200px"
+                  style="border-radius: 15px"
+                  src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg"
+                  alt=""
+                />
+              </div>
+              <div class="detail">
+                <p>Private Villa in San Francisco</p>
+                <h2>Deluxe Queen Room with Street View</h2>
+                <p>1 bedroom / 1 bathroom / Wifi / Kitchen</p>
+                <div class="stars">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                </div>
+                <div class="price">
+                  <p style="opacity: 0.6;">2 Guest</p>
+                  <p> <b style="font-size: 25px;">$100</b> /day</p>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+
+
+      
+        
+      </div>
+
+      <div class="rightContainer">
+        <div class="aFc">
+          <h4>Applied Filter</h4>
+          <p style="color: blue">clear</p>
+        </div>
+        <button class="villa" type="submit">Villa</button>
+        <h4>Select Filters</h4>
+
+        <div class="Sectionbest">
+          <h4>Best for Americans</h4>
+          <div class="best">
+            <input type="checkbox" class="check" />
+            <p>Shopping Malls</p>
+            <p>(0)</p>
+          </div>
+          <div class="best">
+            <input type="checkbox" class="check" />
+            <p>Near Mountain</p>
+            <p>(0)</p>
+          </div>
+        </div>
+
+        <div class="Sectionbest2">
+          <h4>Best for Americans</h4>
+          <div class="best">
+            <input type="checkbox" class="check" />
+            <p>Shopping Malls</p>
+            <p>(0)</p>
+          </div>
+          <div class="best">
+            <input type="checkbox" class="check" />
+            <p>Near Mountain</p>
+            <p>(0)</p>
+          </div>
+          <div class="best">
+            <input type="checkbox" class="check" />
+            <p>Shopping Malls</p>
+            <p>(0)</p>
+          </div>
+          <div class="best">
+            <input type="checkbox" class="check" />
+            <p>Near Mountain</p>
+            <p>(0)</p>
+          </div>
+          <div class="best">
+            <input type="checkbox" class="check" />
+            <p>Shopping Malls</p>
+            <p>(0)</p>
+          </div>
+          <p style="color: blue; padding-left: 124px; margin-top: 14px">
+            View More
+          </p>
+        </div>
+      </div>
+    </div>
+      <!-- Footer  -->
+      <div class="mainfooter">
+        <div class="Abovefooter">
+          <div class="logofooter">
+            <img src="Untitled design.png" alt="" />
+          </div>
+          <div class="contact">
+            <h4 class="footerh4">CONTACT</h4>
+  
+            <li class="li">Troed-y-bryn sidcup lane</li>
+            <li class="li">CF83 2PX, Caerphilly</li>
+            <li class="li">Mid Glamorgan , UK</li>
+            <li class="li">
+              <a class="link" href="www.google.com">www.fakexy.com</a>
+            </li>
+            <li class="li">029 2088 2642</li>
+          </div>
+          <div class="usefull_links">
+            <h4 class="footerh4">USEFUL LINKS</h4>
+  
+            <li class="li">Blog</li>
+            <li class="li">Pricing</li>
+            <li class="li">Sales</li>
+            <li class="li">Customer Services</li>
+            <li class="li">About Us</li>
+          </div>
+          <div class="recentpost">
+            <h4 class="footerh4">RECENT POST</h4>
+  
+            <li class="li">Lorem ipsum dolor sit, amet</li>
+            <li class="li">Lorem ipsum dolor sit, amet</li>
+            <li class="li">Lorem ipsum dolor sit, amet</li>
+            <li class="li">Lorem ipsum dolor sit, amet</li>
+            <li class="li">Lorem ipsum dolor sit, amet</li>
+          </div>
+        </div>
+      </div>
+      <!-- copy right -->
+      <div class="copyright">
+        <p>All rights reserved by Abdullah Khalid Pasha 2021</p>
+      </div>
+  </body>
+</html>
