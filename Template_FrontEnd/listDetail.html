@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>List Detail</title>
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        /* background-color: rgb(245, 241, 241); */
+      }
+
+      /* Navbar */
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 5%;
+        background-color: #161515;
+      }
+      .logo {
+        width: 140px;
+        /* height: 150px; */
+        cursor: pointer;
+        /* background-color: aqua; */
+        /* margin-bottom: -54px; */
+      }
+      .navlinks li {
+        list-style: none;
+        display: inline;
+        margin: 0 30px;
+      }
+
+      .navlinks li a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+      }
+      .register {
+        background-color: white;
+        padding: 10px 25px;
+        border-radius: 15px;
+        text-decoration: none;
+        color: black;
+        /* border-color: black; */
+        /* border-width: 1px solid black; */
+        cursor: pointer;
+      }
+
+      /* flex grid  */
+      .container {
+        /* background-color: aqua; */
+        margin: 3% 7%;
+        display: flex;
+        flex-direction: column;
+        /* background-color: blue; */
+        padding: 0px 15px;
+      }
+      .container h1 {
+        padding-left: 4%;
+      }
+      .container .reviewLocation {
+        padding-left: 4%;
+      }
+      .features {
+        padding-left: 4%;
+        margin-top: 2px;
+      }
+      .features p {
+        opacity: 0.8;
+      }
+      .name {
+        padding-left: 4%;
+        margin-top: 15px;
+      }
+      .name p {
+        font-family: sans-serif;
+        font-weight: bold;
+      }
+      .price {
+        flex-direction: row;
+        display: flex;
+        justify-content: flex-end;
+        /* background-color: red; */
+        padding-right: 5%;
+      }
+
+      .reviewLocation {
+        display: flex;
+        flex-direction: row;
+        margin-top: 5px;
+        /* justify-content:; */
+      }
+      .review {
+        padding-left: 20px;
+      }
+      .location {
+        padding-left: 20px;
+      }
+      .stars {
+        display: flex;
+        flex-direction: row;
+        margin: 1px 0px;
+      }
+      .stars span {
+        padding-left: 3px;
+      }
+
+      .grid {
+        display: flex;
+        flex-direction: row;
+        /* flex: 50%; */
+        margin-top: 15px;
+        justify-content: center;
+        /* background-color: blue; */
+        /* padding: 2px 0px; */
+      }
+
+      .rightGrid {
+        display: flex;
+        flex-direction: column;
+        margin: 3px 5px;
+      }
+
+      .rightUpperGrid {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 3px;
+      }
+
+      .rightUpperGrid > img {
+        margin-left: 3px;
+      }
+      .rightLweGrid > img {
+        margin-left: 3px;
+      }
+
+      .rightLweGrid {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .grid img {
+        border-radius: 5px;
+      }
+
+      /* Check Availability CSS  */
+
+      .checkContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        /* background-color: aqua; */
+        padding: 18px 0px;
+        box-shadow: 5px 3px 20px rgba(0, 0, 0, 0.253);
+      }
+      .checkContainer input {
+        border: none;
+        margin-top: 5px;
+      }
+      .checkContainer div {
+        display: flex;
+        flex-direction: column;
+      }
+      .button {
+        padding: 2px 90px;
+        color: white;
+        background-color: brown;
+        border: none;
+        border-radius: 5px;
+      }
+
+      /* Feature Details */
+      .home {
+        display: flex;
+        flex-direction: row;
+        margin: 1% 0px;
+      }
+      .detail {
+        padding-left: 20px;
+      }
+      .subtext {
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      /* detailText */
+
+      .detailText {
+        padding-right: 38%;
+        /* background-color: aqua; */
+        /* margin-bottom: 23px; */
+      }
+
+      /*   Footer */
+
+      .mainfooter {
+        display: flex;
+        /* flex-wrap: column wrap */
+
+        flex-direction: column;
+        background-color: rgb(22, 21, 21);
+        padding: 3% 3%;
+      }
+      .footerh4 {
+        color: chocolate;
+      }
+      .Abovefooter {
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-content: space-evenly;
+        /* flex-wrap: wrap; */
+        /* background-color: aqua; */
+        /* padding-top: 5em; */
+      }
+      .contact {
+        flex: 20%;
+        /* justify-content: center; */
+      }
+      .usefull_links {
+        flex: 20%;
+      }
+      .recentpost {
+        flex: 20%;
+      }
+
+      .li {
+        list-style-type: none;
+        line-height: 2em;
+        color: rgb(172, 169, 165);
+      }
+      .li:hover {
+        opacity: 0.9;
+        color: chocolate;
+      }
+      .link {
+        text-decoration: none;
+        color: rgb(172, 169, 165);
+        /* font-size: large; */
+      }
+      .link:hover {
+        opacity: 0.9;
+        color: rgb(210, 105, 30);
+      }
+
+      .logofooter {
+        /* display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; */
+        /* margin-top: 2%; */
+        flex: 35%;
+        /* background-color: red; */
+      }
+      .logofooter img {
+        height: 350px;
+        /* background-size: cover; */
+      }
+      .copyright {
+        padding: 25px;
+        background-color: rgb(0, 0, 0);
+        /* justify-content: center; */
+      }
+      .copyright p {
+        text-align: center;
+        color: white;
+      }
+
+      .textContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 5% 20%;
+      }
+
+      .textContainer h1 {
+        font-size: 45px;
+        font-weight: 700;
+        color: #d2691e;
+      }
+      .textContainer p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        margin-top: 5%;
+        color: rgb(41, 41, 41);
+        text-align: center;
+        margin: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div class="header">
+      <nav class="navbar">
+        <a href="http://127.0.0.1:5500/index.html">
+          <img class="logo"  src="small logo.png" alt="" />
+
+        </a>
+        <ul class="navlinks">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./listing.html">Listing</a></li>
+          <li><a href="./listDetail.html">List Details</a></li>
+        </ul>
+        <a href="#" class="register">Register Now</a>
+      </nav>
+    </div>
+    <!-- flex grid -->
+    <div class="container">
+      <h1>Wenge House</h1>
+      <div class="reviewLocation">
+        <div class="stars">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <div class="review">
+          <p>245 reviews</p>
+        </div>
+        <div class="location">
+          <p>Location San Francisco California, United Kingdom</p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="leftGrid">
+          <img
+            height="355px"
+            src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg"
+            alt=""
+          />
+        </div>
+
+        <div class="rightGrid">
+          <div class="rightUpperGrid">
+            <img
+              height="175"
+              src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg"
+              alt=""
+            />
+            <img
+              height="175"
+              src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg"
+              alt=""
+            />
+          </div>
+          <div class="rightLweGrid">
+            <img
+              height="175"
+              src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg"
+              alt=""
+            />
+            <img
+              height="175"
+              src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?cs=srgb&dl=pexels-pixabay-271624.jpg&fm=jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="name">
+        <p>Entire Rental Unit Hostel by Brandon</p>
+      </div>
+      <div class="features">
+        <p>2 guest 2 beds 2 bathrooms</p>
+      </div>
+      <div class="price">
+        <h3>$100/ day</h3>
+      </div>
+
+      <hr width="700" style="margin-top: 20px; margin-left: 4%" />
+    </div>
+
+    <!-- Check Availabilty -->
+    <div class="container">
+      <div class="checkContainer">
+        <div>
+          <label for="">Check in</label>
+          <input type="text" placeholder="Add Date" />
+        </div>
+        <div>
+          <label for="">Check Out</label>
+          <input type="text" placeholder="Add Date" />
+        </div>
+        <div>
+          <label for="">Guest</label>
+          <input type="text" placeholder="Add A Guest" />
+        </div>
+        <button class="button" type="submit">Check Availabilty</button>
+      </div>
+    </div>
+
+    <!-- Feature Details -->
+    <div class="container">
+      <div class="home">
+        <div class="icon">
+          <i class="fa-sharp fa-solid fa-house"></i>
+        </div>
+        <div class="detail">
+          <p><b>Entire Home</b></p>
+          <p class="subtext">You will have the entire flat for you</p>
+        </div>
+      </div>
+
+      <div class="home">
+        <div class="icon">
+          <i class="fa-regular fa-circle-check"></i>
+        </div>
+        <div class="detail">
+          <p><b>Enhance Clean</b></p>
+          <p class="subtext">You will have the entire flat for you</p>
+        </div>
+      </div>
+
+      <div class="home">
+        <div class="icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div class="detail">
+          <p><b>Great Location</b></p>
+          <p class="subtext">You will have the entire flat for you</p>
+        </div>
+      </div>
+
+      <div class="home">
+        <div class="icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="detail">
+          <p><b>Great Security</b></p>
+          <p class="subtext">You will have the entire flat for you</p>
+        </div>
+      </div>
+      <hr width="700" style="margin-top: 20px; margin-left: 3px" />
+    </div>
+
+    <!-- Text Area -->
+    <div class="container">
+      <div class="detailText">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+          illum rem quia veniam modi soluta et laudantium perferendis sint, iure
+          temporibus non similique hic repellendus suscipit corporis eaque
+          delectus incidunt?Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Cupiditate illum rem quia veniam modi Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Cupiditate illum rem quia veniam modi
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+          illum rem quia veniam modi Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Cupiditate illum rem quia veniam modi Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Cupiditate illum rem quia
+          veniam modi
+        </p>
+      </div>
+      <!-- <hr width="700" style="margin-top: 40px; margin-left: 3px" /> -->
+    </div>
+
+    <!-- Footer  -->
+    <div class="mainfooter">
+      <div class="Abovefooter">
+        <div class="logofooter">
+          <img src="Untitled design.png" alt="" />
+        </div>
+        <div class="contact">
+          <h4 class="footerh4">CONTACT</h4>
+
+          <li class="li">Troed-y-bryn sidcup lane</li>
+          <li class="li">CF83 2PX, Caerphilly</li>
+          <li class="li">Mid Glamorgan , UK</li>
+          <li class="li">
+            <a class="link" href="www.google.com">www.fakexy.com</a>
+          </li>
+          <li class="li">029 2088 2642</li>
+        </div>
+        <div class="usefull_links">
+          <h4 class="footerh4">USEFUL LINKS</h4>
+
+          <li class="li">Blog</li>
+          <li class="li">Pricing</li>
+          <li class="li">Sales</li>
+          <li class="li">Customer Services</li>
+          <li class="li">About Us</li>
+        </div>
+        <div class="recentpost">
+          <h4 class="footerh4">RECENT POST</h4>
+
+          <li class="li">Lorem ipsum dolor sit, amet</li>
+          <li class="li">Lorem ipsum dolor sit, amet</li>
+          <li class="li">Lorem ipsum dolor sit, amet</li>
+          <li class="li">Lorem ipsum dolor sit, amet</li>
+          <li class="li">Lorem ipsum dolor sit, amet</li>
+        </div>
+      </div>
+    </div>
+    <!-- copy right -->
+    <div class="copyright">
+      <p>All rights reserved by Abdullah Khalid Pasha 2021</p>
+    </div>
+  </body>
+</html>
