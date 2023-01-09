@@ -6,18 +6,18 @@ const admminAuth = require("../../middlewares/adminAuth");
 var router = express.Router();
 
 // get products
-router.get("/", auth,admminAuth ,async (req, res) => {
+router.get("/",async (req, res) => {
     let page = Number(req.query.page ? req.query.page : 1);
     let limit = Number(req.query.limit ? req.query.limit : 10);
     let skip = (page - 1) * limit;
     const products = await Product.find().skip(skip).limit(limit);
-  res.status(200).json({
-    status: "success",
-    results: products.length,
-    data: {
-      products,
-    },
-  });
+    res.send(products);
+  // res.status(200).json({
+  //   status: "success",
+  //   results: products.length,
+  //   products,
+    
+  // });
 });
 
 // get product by id

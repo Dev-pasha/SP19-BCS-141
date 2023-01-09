@@ -1,36 +1,41 @@
-import React, { useState } from 'react';
-import './style.css';
+import React, { useState } from "react";
+import axios from "axios";
+import "./style.css";
 
 function Register() {
-  const [form, setValues] = useState({
-    username: '',
-    email: '',
-    password: ''
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleChange = event => {
-    setValues({
-      ...form,
-      [event.target.name]: event.target.value
-    });
-  };
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    console.log(form);
+  const handleregister = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:4000/api/users/register", {
+        name,
+        email,
+        password,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
     <div className="register-container">
       <h1>Create an account</h1>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username">Name:</label>
           <input
             type="text"
-            name="username"
-            value={form.username}
-            onChange={handleChange}
+            name="name"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
             required
           />
         </div>
@@ -39,8 +44,10 @@ function Register() {
           <input
             type="email"
             name="email"
-            value={form.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
             required
           />
         </div>
@@ -49,12 +56,14 @@ function Register() {
           <input
             type="password"
             name="password"
-            value={form.password}
-            onChange={handleChange}
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
             required
           />
         </div>
-        <button type="submit" className="btn">
+        <button type="submit" onClick={handleregister} className="btn">
           Create Account
         </button>
       </form>

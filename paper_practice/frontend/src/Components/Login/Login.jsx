@@ -1,24 +1,36 @@
-import React, { useState } from 'react';
-import './style.css';
+import React, { useState } from "react";
+import "./style.css";
+import axios from "axios";
 
 function Login() {
   const [form, setValues] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
 
   const [forgotPassword, setForgotPassword] = useState(false);
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setValues({
       ...form,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
+
+    axios
+      .post("http://localhost:4000/api/users/login", {
+        email: form.email,
+        password: form.password,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const toggleForgotPassword = () => {
@@ -41,7 +53,12 @@ function Login() {
   );
 }
 
-const LoginForm = ({ form, handleChange, handleSubmit, toggleForgotPassword }) => (
+const LoginForm = ({
+  form,
+  handleChange,
+  handleSubmit,
+  toggleForgotPassword,
+}) => (
   <form onSubmit={handleSubmit}>
     <h1>Login</h1>
     <div className="form-group">
@@ -70,7 +87,11 @@ const LoginForm = ({ form, handleChange, handleSubmit, toggleForgotPassword }) =
       </button>
     </div>
     <div className="form-group">
-      <button type="button" onClick={toggleForgotPassword} className="btn btn-link">
+      <button
+        type="button"
+        onClick={toggleForgotPassword}
+        className="btn btn-link"
+      >
         Forgot password?
       </button>
     </div>
@@ -90,7 +111,11 @@ const ForgotPassword = ({ toggleForgotPassword }) => (
       </button>
     </div>
     <div className="form-group">
-      <button type="button" onClick={toggleForgotPassword} className="btn btn-link">
+      <button
+        type="button"
+        onClick={toggleForgotPassword}
+        className="btn btn-link"
+      >
         Cancel
       </button>
     </div>
