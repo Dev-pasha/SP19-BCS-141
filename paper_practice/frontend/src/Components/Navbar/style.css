@@ -1,0 +1,61 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .navbar-brand {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    margin: 0 1rem;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .nav-link:hover {
+    color: lightgray;
+  }
+  
+  .btnlogin{
+    background-color: #af704c;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 10px;
+    cursor: pointer;
+  }
+
+  .btnregister{
+    background-color: #af704c;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
